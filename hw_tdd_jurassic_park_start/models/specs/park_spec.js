@@ -12,6 +12,7 @@ describe("Park", function () {
     park = new Park("Triassic Meadow", 10, dinosaurs);
     dinosaur1 = new Dinosaur("t-rex", "carnivore", 50);
     dinosaur2 = new Dinosaur("stegosaurus", "herbivore", 20);
+    dinosaur3 = new Dinosaur("Stevie", "herbivore", 500);
     dinosaurs = [dinosaur1, dinosaur2];
   });
 
@@ -32,7 +33,9 @@ describe("Park", function () {
   });
 
   it("should be able to add a dinosaur to its collection", function(){
-    const actual 
+    park.addDinosaur(dinosaur3)
+    const actual = park.numberOfDinosaurs();
+    assert.deepStrictEqual(actual, 3);
 
   });
 
