@@ -12,8 +12,14 @@ Park.prototype.numberOfDinosaurs = function(){
     return this.dinosaurs.length;
 }
 
-Park.prototype.numberOfDinosaurs = function(){
-    return this.dinosaurs.length;
+Park.prototype.removeDinosaur = function(dinosaur) {
+    const indexOfDinosaur = this.dinosaurs.indexOf(dinosaur);
+    this.dinosaurs.splice(indexOfDinosaur, 1);
+  }
+
+Park.prototype.mostVisitors = function(){
+    let mostVisited = 0;
+    if mostVisited > this.guestsAttractedPerDay
 }
 
 module.exports = Park;

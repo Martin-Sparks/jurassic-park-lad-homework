@@ -11,7 +11,7 @@ describe("Park", function () {
   beforeEach(function () {
     park = new Park("Triassic Meadow", 10, dinosaurs);
     dinosaur1 = new Dinosaur("t-rex", "carnivore", 50);
-    dinosaur2 = new Dinosaur("stegosaurus", "herbivore", 20);
+    dinosaur2 = new Dinosaur("stegosaurus", "herbivore", 80);
     dinosaur3 = new Dinosaur("Stevie", "herbivore", 500);
     dinosaurs = [dinosaur1, dinosaur2];
   });
@@ -39,9 +39,18 @@ describe("Park", function () {
 
   });
 
-  it("should be able to remove a dinosaur from its collection");
+  it("should be able to remove a dinosaur from its collection", function(){
+    park.addDinosaur(dinosaur3)
+    park.removeDinosaur(dinosaur3)
+    const actual = park.numberOfDinosaurs()
+    assert.deepStrictEqual(actual, 2)
+  });
 
-  it("should be able to find the dinosaur that attracts the most visitors");
+  it("should be able to find the dinosaur that attracts the most visitors", function(){
+    const actual = park.mostVisitors();
+    assert.strictEqual(actual, 80);
+
+  });
 
   it("should be able to find all dinosaurs of a particular species");
 
